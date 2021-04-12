@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.boranqichacha.mapper.FiOrderInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.boranqichacha.Entity.FiOrderInfo">
+            <id property="orderId" column="order_id" jdbcType="BIGINT"/>
+            <result property="outTradeNo" column="out_trade_no" jdbcType="VARCHAR"/>
+            <result property="goodsId" column="goods_id" jdbcType="BIGINT"/>
+            <result property="businessId" column="business_id" jdbcType="BIGINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="orderMobile" column="order_mobile" jdbcType="VARCHAR"/>
+            <result property="orderStatus" column="order_status" jdbcType="INTEGER"/>
+            <result property="orderSchedule" column="order_schedule" jdbcType="INTEGER"/>
+            <result property="payStatus" column="pay_status" jdbcType="INTEGER"/>
+            <result property="orderType" column="order_type" jdbcType="INTEGER"/>
+            <result property="orderTime" column="order_time" jdbcType="TIMESTAMP"/>
+            <result property="payTime" column="pay_time" jdbcType="TIMESTAMP"/>
+            <result property="totalMoney" column="total_money" jdbcType="DECIMAL"/>
+            <result property="orderMoney" column="order_money" jdbcType="DECIMAL"/>
+            <result property="couponMoney" column="coupon_money" jdbcType="DECIMAL"/>
+            <result property="payChannel" column="pay_channel" jdbcType="INTEGER"/>
+            <result property="orderRemark" column="order_remark" jdbcType="VARCHAR"/>
+            <result property="delFlag" column="del_flag" jdbcType="CHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        order_id,out_trade_no,goods_id,
+        business_id,user_id,order_mobile,
+        order_status,order_schedule,pay_status,
+        order_type,order_time,pay_time,
+        total_money,order_money,coupon_money,
+        pay_channel,order_remark,del_flag,
+        create_time,update_time
+    </sql>
+</mapper>

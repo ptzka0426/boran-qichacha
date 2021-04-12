@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.boranqichacha.mapper.FiUserInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.boranqichacha.Entity.FiUserInfo">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="headImg" column="head_img" jdbcType="VARCHAR"/>
+            <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
+            <result property="mobileNo" column="mobile_no" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="company" column="company" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="salt" column="salt" jdbcType="VARCHAR"/>
+            <result property="invitationCode" column="invitation_code" jdbcType="VARCHAR"/>
+            <result property="invitationMeCode" column="invitation_me_code" jdbcType="VARCHAR"/>
+            <result property="vipLv" column="vip_lv" jdbcType="INTEGER"/>
+            <result property="openId" column="open_id" jdbcType="VARCHAR"/>
+            <result property="unionId" column="union_id" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="isCertification" column="is_certification" jdbcType="BOOLEAN"/>
+            <result property="loginTime" column="login_time" jdbcType="TIMESTAMP"/>
+            <result property="regTime" column="reg_time" jdbcType="TIMESTAMP"/>
+            <result property="delFlag" column="del_flag" jdbcType="CHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="disableStatus" column="disable_status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,head_img,nick_name,
+        mobile_no,password,company,
+        email,salt,invitation_code,
+        invitation_me_code,vip_lv,open_id,
+        union_id,status,is_certification,
+        login_time,reg_time,del_flag,
+        create_time,update_time,disable_status
+    </sql>
+</mapper>
