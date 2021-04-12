@@ -1,7 +1,8 @@
 package com.example.boranqichacha.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import generator.Entity.FiUserInfo;
+import com.example.boranqichacha.Entity.FiUserInfo;
+
 
 /**
  *
