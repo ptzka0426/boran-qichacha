@@ -17,7 +17,7 @@ import java.util.Map;
  */
 @Mapper
 public interface FiOrderInfoMapper extends BaseMapper<FiOrderInfo> {
-    @Select("select dd.order_id,yw.goods_name,zt.schedule_remark from fi_order_info dd   INNER JOIN fi_business_goods yw on dd.business_id=yw.business_id\n" +
+    @Select("select dd.order_id,yw.goods_name,yw.icon,zt.schedule_remark from fi_order_info dd   INNER JOIN fi_business_goods yw on dd.business_id=yw.business_id\n" +
             "INNER JOIN fi_order_schedule_record zt on zt.order_id=dd.order_id\n" +
             " where user_id=#{userid}\n" +
             " GROUP BY dd.order_id,goods_name\n" +
