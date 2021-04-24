@@ -5,26 +5,26 @@
 <mapper namespace="com.example.boranqichacha.mapper.FiOrderInfoMapper">
 
     <resultMap id="BaseResultMap" type="com.example.boranqichacha.Entity.FiOrderInfo">
-            <id property="orderId" column="order_id" jdbcType="BIGINT"/>
-            <result property="outTradeNo" column="out_trade_no" jdbcType="VARCHAR"/>
-            <result property="goodsId" column="goods_id" jdbcType="BIGINT"/>
-            <result property="businessId" column="business_id" jdbcType="BIGINT"/>
-            <result property="userId" column="user_id" jdbcType="BIGINT"/>
-            <result property="orderMobile" column="order_mobile" jdbcType="VARCHAR"/>
-            <result property="orderStatus" column="order_status" jdbcType="INTEGER"/>
-            <result property="orderSchedule" column="order_schedule" jdbcType="INTEGER"/>
-            <result property="payStatus" column="pay_status" jdbcType="INTEGER"/>
-            <result property="orderType" column="order_type" jdbcType="INTEGER"/>
-            <result property="orderTime" column="order_time" jdbcType="TIMESTAMP"/>
-            <result property="payTime" column="pay_time" jdbcType="TIMESTAMP"/>
-            <result property="totalMoney" column="total_money" jdbcType="DECIMAL"/>
-            <result property="orderMoney" column="order_money" jdbcType="DECIMAL"/>
-            <result property="couponMoney" column="coupon_money" jdbcType="DECIMAL"/>
-            <result property="payChannel" column="pay_channel" jdbcType="INTEGER"/>
-            <result property="orderRemark" column="order_remark" jdbcType="VARCHAR"/>
-            <result property="delFlag" column="del_flag" jdbcType="CHAR"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <id property="order_Id" column="order_id" jdbcType="BIGINT"/>
+            <result property="out_Trade_No" column="out_trade_no" jdbcType="VARCHAR"/>
+            <result property="goods_Id" column="goods_id" jdbcType="BIGINT"/>
+            <result property="business_Id" column="business_id" jdbcType="BIGINT"/>
+            <result property="user_Id" column="user_id" jdbcType="BIGINT"/>
+            <result property="order_Mobile" column="order_mobile" jdbcType="VARCHAR"/>
+            <result property="order_Status" column="order_status" jdbcType="INTEGER"/>
+            <result property="order_Schedule" column="order_schedule" jdbcType="INTEGER"/>
+            <result property="pay_Status" column="pay_status" jdbcType="INTEGER"/>
+            <result property="order_Type" column="order_type" jdbcType="INTEGER"/>
+            <result property="order_Time" column="order_time" jdbcType="TIMESTAMP"/>
+            <result property="pay_Time" column="pay_time" jdbcType="TIMESTAMP"/>
+            <result property="total_Money" column="total_money" jdbcType="DECIMAL"/>
+            <result property="order_Money" column="order_money" jdbcType="DECIMAL"/>
+            <result property="coupon_Money" column="coupon_money" jdbcType="DECIMAL"/>
+            <result property="pay_Channel" column="pay_channel" jdbcType="INTEGER"/>
+            <result property="order_Remark" column="order_remark" jdbcType="VARCHAR"/>
+            <result property="del_Flag" column="del_flag" jdbcType="CHAR"/>
+            <result property="create_Time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_Time" column="update_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">

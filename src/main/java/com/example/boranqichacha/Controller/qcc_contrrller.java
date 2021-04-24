@@ -22,7 +22,7 @@ import static java.lang.System.out;
 
 @RestController
 @RequestMapping("/QCC/")
-public class MainApp {
+public class qcc_contrrller {
     // 请登录http://yjapi.com/DataCenter/MyData
     // 查看我的秘钥 我的Key
     private static final String appkey = "92325c05d8d24a3d97dac5ce908e02a9";
