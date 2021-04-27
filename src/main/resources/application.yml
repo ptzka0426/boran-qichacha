@@ -12,6 +12,10 @@ spring:
       initial-size: 5
       max-total: 5
       max-wait-millis: 200
+  servlet:
+    multipart:
+      max-file-size: 512MB
+      max-request-size: 512MB
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml  #mybatis指定数据库xml文件
   typeAliasesPackage: com.example.boranqichacha.Entity      #指定实体类
@@ -25,3 +29,17 @@ mybatis-plus:
       id-type: auto
       logic-delete-value: 0
       logic-not-delete-value: 1
+
+
+
+#      自定义注释测试
+person:
+  lastName: hello
+  age: 18
+  boss: false
+  birth: 2017/12/12
+  maps: {k1: v1,k2: 12}
+  lists:
+    ‐ lisi
+    ‐ zhaoliu
+

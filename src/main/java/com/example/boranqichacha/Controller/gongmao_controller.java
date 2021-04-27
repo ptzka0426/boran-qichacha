@@ -1,19 +1,13 @@
 package com.example.boranqichacha.Controller;
 
 import com.example.boranqichacha.Util.*;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.http.client.methods.HttpHead;
-import org.json.HTTP;
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.*;
 
 import static java.lang.System.out;
@@ -28,20 +22,31 @@ public class gongmao_controller {
 
     @ResponseBody
     @RequestMapping("/api/attachment/uploadIndentityFile")
-    public AjaxJson test(@RequestParam Map<String, Object> map) throws Exception {
+    public AjaxJson test(@RequestParam Map<String, Object> map, @RequestParam("file") MultipartFile[] file) throws Exception {
         map.put("appKey", "c3ce6bdda9c34120bef5477ac54c38c3");
         map.put("nonce", new Random().nextInt(100000) + "");
         map.put("timestamp", Calendar.getInstance().getTimeInMillis() + "");
-        /*System.out.println(map);*/
+
+        /*for (MultipartFile files : file){*/
+        map.put("identityFrontBase64", MultipartFile_ImageToBase64.generateBase64(file[0]));
+        map.put("identityBackgroundBase64", MultipartFile_ImageToBase64.generateBase64(file[1]));
+        /* }*/
+
         String appSecret = "946ba81891aa09380e3012ce7eb2ee35";
         //生成签名
         String token = SignUtil.getSign(map, appSecret);
         map.put("sign", token);
         String bodys = SignUtil.getUrlText(map);
         out.println(bodys);
-        //String tokenJson = HttpRequestUtil.httpRequest("https://openapi-qa.gongmall.com/api/attachment/uploadIndentityFile", "POST",bodys);
         String tokenJson= HttpsUtils.post("https://openapi-qa.gongmall.com/api/attachment/uploadIndentityFile",map);
-        //String tokenJson=  HttpUtil.post("http://10.100.64.22/api/similarity/v1/", param.toString());
+
         return AjaxJson.getSuccess(tokenJson);
+    }
+    
+    @Autowired
+    com.example.boranqichacha.Entity.Person Person;
+    @RequestMapping("/test")
+    AjaxJson test(){
+        return AjaxJson.getSuccess(Person.getLastName(),Person.getLt());
     }
 }
