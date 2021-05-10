@@ -1,3 +1,4 @@
+# windows配置
 server:
   port: 9090
 spring:
@@ -30,6 +31,12 @@ mybatis-plus:
       logic-delete-value: 0
       logic-not-delete-value: 1
 
+
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    org:
+      mybatis: debug
 
 
 #      自定义注释测试

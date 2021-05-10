@@ -8,6 +8,7 @@
         <version>2.4.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.example</groupId>
     <artifactId>boran-qichacha</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -70,7 +71,25 @@
             <artifactId>commons-fileupload</artifactId>
             <version>1.4</version>
         </dependency>
-        <!-- base64图片转码 -->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+
+        <!--热部署依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.30</version>
+        </dependency>
 
     </dependencies>
 
@@ -81,7 +100,58 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.4.4</version>
             </plugin>
+            <!--自定义插件-->
+            <!--<plugin>
+                <groupId>com.findbugs</groupId>
+                <artifactId>lt_archetype_plus</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <configuration>
+                    <msg>我 是 龙 滔</msg>
+                    <options>
+                        <option>ont</option>
+                        <option>two</option>
+                    </options>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>longtao</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>-->
         </plugins>
+        <resources>
+            <resource><!--basedir 主目录-->
+                <directory>${basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>conf/**</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources/conf/${profiles.active}</directory>
+            </resource>
+        </resources>
     </build>
+    <!--配置项目文件 conf -->
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profiles.active>dev</profiles.active>
+            </properties>
+        </profile>
 
+        <profile>
+            <id>pro</id>
+            <properties>
+                <profiles.active>pro</profiles.active>
+            </properties>
+            <!--默认打包 true-->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 </project>
