@@ -137,6 +137,7 @@
                 </executions>
             </plugin>-->
         </plugins>
+
         <!--mvn install -P dev||pro-->
         <resources>
             <resource><!--basedir 主目录-->

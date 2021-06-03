@@ -17,6 +17,14 @@ public class SignUtil {
          System.out.println(calendar.getTimeInMillis());
      }*/
     /* 正式环境
+-----新
+        appKey
+    60b5f65ef29f4fb29dfe32d80d629f87
+    appSecret
+    ffceccfd170345ef4a25b69cbad256c2
+    合同地址
+    https://contract.gongmall.com/url_contract.html?companyId=zD3g1M&positionId=VBJBkV
+----旧版
     appKey
     644891ced71945c487e4f46c8bf4dafb
     appSecret
